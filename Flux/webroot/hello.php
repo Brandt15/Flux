@@ -1,0 +1,31 @@
+<?php 
+/**
+ * This is a Flux pagecontroller.
+ *
+ */
+// Include the essential config-file which also creates the $flux variable with its defaults.
+include(__DIR__.'/config.php'); 
+ 
+ 
+// Do it and store it all in variables in the Anax container.
+$flux['title'] = "Hello World";
+ 
+$flux['header'] = <<<EOD
+
+<img class='sitelogo' src='img/fluxlogo.png' alt='Flux Logo'/>
+<span class='sitetitle'>Flux webbtemplate</span>
+<span class='siteslogan'>Återanvändbara moduler för webbutveckling med PHP</span>
+EOD;
+ 
+$flux['main'] = <<<EOD
+<h1>Hej Världen</h1>
+<p>Detta är en exempelsida som visar hur Flux ser ut och fungerar.</p>
+EOD;
+ 
+$flux['footer'] = <<<EOD
+<footer><span class='sitefooter'><a href='http://validator.w3.org/unicorn/check?ucn_uri=referer&amp;ucn_task=conformance'>Unicorn</a></span></footer>
+EOD;
+ 
+ 
+// Finally, leave it all to the rendering phase of Flux.
+include(FLUX_THEME_PATH);
